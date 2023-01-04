@@ -1,12 +1,23 @@
-# React Template
+# Vad
+
+## Getting Started
+
+```bash
+# Install dependencies
+$ yarn
+
+# Start development server
+$ yarn dev
+
+# Build production bundle
+$ yarn build
+```
 
 ## Using
 
 - React 18
 - Vanilla Extract
 - Vite
-- Zustand
-- React-query
 - ESLint
 - Prettier
 - Format on Save in VS Code

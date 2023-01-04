@@ -9,6 +9,9 @@ module.exports = {
   rules: {
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error",
+    "import/extensions": "off",
+    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
   },
-  ignorePatterns: ["**/__generated__/**/*", "**/dist/**/*", ".eslintrc.js"],
+  ignorePatterns: ["**/__generated__/**/*", "**/dist/**/*", ".eslintrc.js", "cz-config.js"],
 };
