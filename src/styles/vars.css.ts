@@ -36,7 +36,7 @@ export const vars = createGlobalTheme(':root', {
     body3: '11px',
     caption: '10px',
   },
-  fontWeights: {
+  fontWeight: {
     bold: '700',
     semiBold: '600',
   },

@@ -14,10 +14,11 @@ const Text = ({
   className,
   size,
   color,
+  weight,
   ...rest
 }: TextProps & TextVariantProps) => {
   return (
-    <span className={cx(text({ size, color }), className)} {...rest}>
+    <span className={cx(text({ size, color, weight }), className)} {...rest}>
       {children}
     </span>
   );

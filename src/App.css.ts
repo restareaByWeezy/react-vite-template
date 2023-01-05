@@ -7,6 +7,7 @@ export const wrapper = style({
   alignItems: 'center',
   width: '100%',
   height: '100%',
+  padding: '30px',
 
   gap: '20px',
 });

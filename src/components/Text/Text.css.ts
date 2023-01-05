@@ -38,6 +38,14 @@ const variants = {
       color: vars.color.tertiary_text,
     },
   },
+  weight: {
+    semiBold: {
+      fontWeight: vars.fontWeight.semiBold,
+    },
+    bold: {
+      fontWeight: vars.fontWeight.bold,
+    },
+  },
 };
 
 // STYLE TEXT //////////////////////////
@@ -50,4 +58,5 @@ export type TextVariants = RecipeVariants<typeof text>;
 export interface TextVariantProps {
   size?: keyof typeof variants.size;
   color?: keyof typeof variants.color;
+  weight?: keyof typeof variants.weight;
 }

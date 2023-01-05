@@ -1,20 +1,15 @@
-import React, { HTMLAttributes, ReactNode } from 'react';
+import React, { HTMLAttributes } from 'react';
 
 import { cx } from '@/styles/classNames';
 
 import { input } from './Input.css';
 
 interface InputProps extends HTMLAttributes<HTMLInputElement> {
-  children: ReactNode;
   className?: string;
 }
 
 const Input = ({ children, className, ...rest }: InputProps) => {
-  return (
-    <input className={cx(input(), className)} {...rest}>
-      {children}
-    </input>
-  );
+  return <input className={cx(input(), className)} {...rest} />;
 };
 
 export default Input;

@@ -3,9 +3,10 @@ import { recipe, RecipeVariants } from '@vanilla-extract/recipes';
 import { vars } from '@/styles/vars.css';
 
 const base = {
-  fontWeight: vars.fontWeights.bold,
+  fontWeight: vars.fontWeight.bold,
   transition: 'all 0.3s ease',
   border: 'none',
+  cursor: 'pointer',
   selectors: {
     '&:disabled': {
       opacity: '0.64',

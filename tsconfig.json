@@ -12,5 +12,12 @@
     "strict": true,
     "skipLibCheck": true
   },
-  "include": ["src", "**/*.ts", "**/*.tsx", "cz-config.js"]
+  "include": [
+    "src",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.css.ts",
+    "cz-config.js",
+    ".eslintrc.js"
+  ]
 }
