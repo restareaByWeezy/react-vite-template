@@ -1,4 +1,4 @@
-import React, { HTMLAttributes, ReactNode } from 'react';
+import React, { forwardRef, HTMLAttributes, ReactNode, Ref } from 'react';
 
 import { cx } from '@/styles/classNames';
 
@@ -9,33 +9,39 @@ interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   className?: string;
 }
 
-const Button = ({
-  children,
-  className,
-  color,
-  sizes,
-  radii,
-  outlined,
-  types,
-  ...rest
-}: ButtonProps & ButtonVariantProps) => {
-  return (
-    <button
-      className={cx(
-        button({
-          color,
-          sizes,
-          radii,
-          outlined,
-          types,
-        }),
-        className,
-      )}
-      {...rest}
-    >
-      {children}
-    </button>
-  );
-};
+const Button = forwardRef(
+  (
+    {
+      children,
+      className,
+      color,
+      sizes,
+      radii,
+      outlined,
+      types,
+      ...rest
+    }: ButtonProps & ButtonVariantProps,
+    fowardRef,
+  ) => {
+    return (
+      <button
+        ref={fowardRef as Ref<HTMLButtonElement> | undefined}
+        className={cx(
+          button({
+            color,
+            sizes,
+            radii,
+            outlined,
+            types,
+          }),
+          className,
+        )}
+        {...rest}
+      >
+        {children}
+      </button>
+    );
+  },
+);
 
 export default Button;

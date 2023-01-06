@@ -1,5 +1,4 @@
-import Button from '@/components/Button';
-import Modal from '@/components/Modal';
+import { Modal } from '@/components/Modal';
 import Text from '@/components/Text/Text';
 import React from 'react';
 
@@ -9,7 +8,7 @@ const Modals = () => {
       <Text size="h2" weight="bold">
         Modal
       </Text>
-      <Modal trigger={<Button>Open modal</Button>}>hi</Modal>
+      <Modal trigger="Open Modal">123</Modal>
     </>
   );
 };
