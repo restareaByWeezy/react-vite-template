@@ -8,6 +8,7 @@ globalStyle('body', {
   lineHeight: 1.5,
   WebkitFontSmoothing: `antialiased`,
   fontFamily: 'Pretendard-Regular',
+  paddingRight: 'calc(var(--removed-body-scroll-bar-size )) !important', // FIX: radix scroll library bug must be fixed
 });
 
 globalStyle('#root', {
@@ -29,6 +30,7 @@ globalStyle(`img, picture, video, canvas, svg`, {
 
 globalStyle(`input, button, textarea, select`, {
   font: `inherit`,
+  all: `unset`,
 });
 
 globalStyle(`p, h1, h2, h3, h4, h5, h6`, {

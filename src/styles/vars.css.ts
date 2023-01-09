@@ -91,5 +91,11 @@ export const vars = createGlobalTheme(':root', {
     secondary_pressed: '#26282B',
     tertiary_btn: '#E8EBED',
     tertiary_pressed: '#C9CDD2',
+
+    //status
+    success: '#00BFA5',
+    warning: '#FFB300',
+    error: '#FF3D00',
+    info: '#429AEB',
   },
 });

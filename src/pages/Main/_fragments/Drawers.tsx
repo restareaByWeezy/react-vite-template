@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Drawer, DrawerContent, DrawerTrigger } from '@/components/Drawer';
 import Text from '@/components/Text/Text';
+import { button } from '@/components/Button/Button.css';
 
 const Drawers = () => {
   return (
@@ -10,25 +11,25 @@ const Drawers = () => {
         Drawer
       </Text>
       <Drawer>
-        <DrawerTrigger>Right</DrawerTrigger>
+        <DrawerTrigger className={button()}>Right</DrawerTrigger>
         <DrawerContent>
           <div style={{ width: '100%', background: 'red' }}>123213</div>
         </DrawerContent>
       </Drawer>
       <Drawer>
-        <DrawerTrigger>Left</DrawerTrigger>
+        <DrawerTrigger className={button()}>Left</DrawerTrigger>
         <DrawerContent side="left">
           <div style={{ width: '100%', background: 'red' }}>123213</div>
         </DrawerContent>
       </Drawer>
       <Drawer>
-        <DrawerTrigger>Top</DrawerTrigger>
+        <DrawerTrigger className={button()}>Top</DrawerTrigger>
         <DrawerContent side="top">
           <div style={{ width: '100%', background: 'red' }}>123213</div>
         </DrawerContent>
       </Drawer>
       <Drawer>
-        <DrawerTrigger>Bottom</DrawerTrigger>
+        <DrawerTrigger className={button()}>Bottom</DrawerTrigger>
         <DrawerContent side="bottom">
           <div style={{ width: '100%', background: 'red' }}>123213</div>
         </DrawerContent>

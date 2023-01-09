@@ -9,7 +9,9 @@ import Menus from './pages/Main/_fragments/Menus';
 import Modals from './pages/Main/_fragments/Modals';
 import Rows from './pages/Main/_fragments/Rows';
 import ScrollAreas from './pages/Main/_fragments/ScrollAreas';
+import Selects from './pages/Main/_fragments/Selects';
 import Texts from './pages/Main/_fragments/Texts';
+import Toasts from './pages/Main/_fragments/Toasts';
 
 const App = () => (
   <div className={wrapper}>
@@ -24,6 +26,8 @@ const App = () => (
     <Modals />
     <Menus />
     <TestDnd />
+    <Toasts />
+    <Selects />
   </div>
 );
 
