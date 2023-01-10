@@ -1,11 +1,11 @@
 module.exports = {
   root: true,
   parser: '@typescript-eslint/parser',
-  extends: ['react-app', 'react-app/jest', 'airbnb-typescript', 'prettier'],
+  extends: ['react-app', 'react-app/jest', 'airbnb-typescript', 'prettier', 'plugin:storybook/recommended'],
   plugins: ['json-format', 'simple-import-sort'],
   parserOptions: {
     project: './tsconfig.json',
-    createDefaultProgram: true,
+    createDefaultProgram: true
   },
   rules: {
     'simple-import-sort/imports': 'error',
@@ -14,13 +14,7 @@ module.exports = {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
     'no-unused-vars': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
-    '@typescript-eslint/no-unused-vars':
-      process.env.NODE_ENV === 'production' ? 'error' : 'warn',
+    '@typescript-eslint/no-unused-vars': process.env.NODE_ENV === 'production' ? 'error' : 'warn'
   },
-  ignorePatterns: [
-    '**/__generated__/**/*',
-    '**/dist/**/*',
-    '.eslintrc.js',
-    'cz-config.js',
-  ],
+  ignorePatterns: ['**/__generated__/**/*', '**/dist/**/*', '.eslintrc.js', 'cz-config.js']
 };

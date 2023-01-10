@@ -5,6 +5,7 @@ import Buttons from './pages/Main/_fragments/Buttons';
 import Cols from './pages/Main/_fragments/Cols';
 import Drawers from './pages/Main/_fragments/Drawers';
 import Inputs from './pages/Main/_fragments/Inputs';
+import Loaders from './pages/Main/_fragments/Loaders';
 import Menus from './pages/Main/_fragments/Menus';
 import Modals from './pages/Main/_fragments/Modals';
 import Rows from './pages/Main/_fragments/Rows';
@@ -28,6 +29,7 @@ const App = () => (
     <TestDnd />
     <Toasts />
     <Selects />
+    <Loaders />
   </div>
 );
 

@@ -10,4 +10,6 @@ export const wrapper = style({
   padding: '30px',
 
   gap: '20px',
+
+  marginBottom: '200px',
 });

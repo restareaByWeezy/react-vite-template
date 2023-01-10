@@ -97,5 +97,23 @@ export const vars = createGlobalTheme(':root', {
     warning: '#FFB300',
     error: '#FF3D00',
     info: '#429AEB',
+
+    disabled: '#E8EBED',
+    disabled_text: '#9EA4AA',
+    disabled_btn: '#E8EBED',
+
+    // border
+    border: '#E8EBED',
+    border_focus: '#429AEB',
+    border_error: '#FF3D00',
+    border_success: '#00BFA5',
+    border_warning: '#FFB300',
+    border_info: '#429AEB',
+
+    // background
+    bg: '#ffffff',
+
+    // shadow
+    shadow: '0 2px 8px rgb(0 0 0 / 15%)',
   },
 });

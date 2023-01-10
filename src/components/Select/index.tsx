@@ -1,4 +1,10 @@
-import React, { forwardRef, Ref } from 'react';
+import React, {
+  Dispatch,
+  forwardRef,
+  Ref,
+  SetStateAction,
+  useState,
+} from 'react';
 import * as RadixSelect from '@radix-ui/react-select';
 import * as styles from './select.css';
 import cx from 'classnames';
@@ -12,17 +18,39 @@ interface SelectProps {
   items: string[];
   label?: string;
   placeholder?: string;
+  size?: 'small' | 'medium' | 'large';
+  value: string;
+  setValue: Dispatch<SetStateAction<string>>;
 }
 
-const Select = ({ items, label, placeholder }: SelectProps) => {
+const Select = ({
+  items,
+  label,
+  placeholder,
+  size,
+  value,
+  setValue,
+}: SelectProps) => {
   const itemList = items.map((item) => {
-    return <SelectItem value={item}>{item}</SelectItem>;
+    return (
+      <SelectItem className={styles.selectItem} value={item}>
+        {item}
+      </SelectItem>
+    );
   });
   return (
-    <RadixSelect.Root>
-      <RadixSelect.Trigger className={styles.selectTrigger} aria-label={label}>
-        <RadixSelect.Value placeholder={placeholder} />
-        <RadixSelect.Icon>
+    <RadixSelect.Root value={value} onValueChange={setValue}>
+      <RadixSelect.Trigger
+        className={styles.selectTrigger({ size: size })}
+        aria-label={label}
+      >
+        <RadixSelect.Value
+          placeholder={placeholder}
+          className={styles.selectValue}
+        >
+          {value}
+        </RadixSelect.Value>
+        <RadixSelect.Icon className={styles.selectIcon}>
           <ChevronDownIcon />
         </RadixSelect.Icon>
       </RadixSelect.Trigger>
@@ -62,9 +90,6 @@ const SelectItem = forwardRef<HTMLInputElement, SelectItemProps>(
         {...props}
       >
         <RadixSelect.ItemText>{children}</RadixSelect.ItemText>
-        <RadixSelect.ItemIndicator className="SelectItemIndicator">
-          <CheckIcon />
-        </RadixSelect.ItemIndicator>
       </RadixSelect.Item>
     );
   },

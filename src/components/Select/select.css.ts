@@ -1,35 +1,83 @@
-import { style } from '@vanilla-extract/css';
+import { recipe } from '@vanilla-extract/recipes';
+import { vars } from '@/styles/vars.css';
+import { style, createVar } from '@vanilla-extract/css';
 
-const selectTrigger = style({
-  display: 'inline-flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  borderRadius: '4px',
-  padding: '0 15px',
-  fontSize: '13px',
-  lineHeight: '1',
-  height: '35px',
-  gap: '5px',
-  backgroundColor: 'white',
-  color: 'var(--violet11)',
-  boxShadow: '0 2px 10px var(--blackA7)',
-  selectors: {
-    '&:hover': {
-      backgroundColor: 'var(--mauve3)',
+const triggerWidth = createVar();
+const triggerHeight = createVar();
+
+const selectTrigger = recipe({
+  variants: {
+    size: {
+      small: {
+        vars: {
+          [triggerWidth]: '50px',
+          [triggerHeight]: '25px',
+        },
+      },
+      medium: {
+        vars: {
+          [triggerWidth]: '100px',
+          [triggerHeight]: '35px',
+        },
+      },
+      large: {
+        vars: {
+          [triggerWidth]: '150px',
+          [triggerHeight]: '45px',
+        },
+      },
     },
-    '&:focus': {
-      boxShadow: '0 0 0 2px black',
+  },
+  defaultVariants: {
+    size: 'small',
+  },
+  base: {
+    position: 'relative',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: triggerWidth,
+    borderRadius: vars.borderRadius.s,
+    padding: '0 7px',
+    fontSize: '13px',
+    lineHeight: '1',
+    height: triggerHeight,
+    gap: '5px',
+    backgroundColor: 'white',
+    border: `1px solid ${vars.color.gray3}`,
+    selectors: {
+      '&:hover': {
+        backgroundColor: vars.color.g_trans1,
+      },
+      '&[data-placeholder]': {
+        color: vars.color.gray8,
+      },
     },
-    '&[data-placeholder]': {
-      color: 'var(--violet9)',
+    vars: {
+      [triggerHeight]: '35px',
     },
   },
 });
 
-const selectContent = style({
+const selectValue = style({
+  display: 'flex',
+  alignItems: 'center',
   overflow: 'hidden',
-  backgroundColor: 'white',
-  borderRadius: '6px',
+  textOverflow: 'ellipsis',
+  whiteSpace: 'nowrap',
+});
+
+const selectIcon = style({
+  color: vars.color.gray8,
+});
+
+const selectContent = style({
+  zIndex: vars.zIndices.DROPDOWN,
+  overflow: 'hidden',
+  backgroundColor: vars.color.white,
+  borderRadius: vars.borderRadius.m,
+  boxShadow: vars.color.shadow,
+  cursor: 'pointer',
 });
 
 const selectViewport = style({
@@ -37,25 +85,25 @@ const selectViewport = style({
 });
 
 const selectItem = style({
-  fontSize: '13px',
   lineHeight: '1',
-  color: 'var(--violet11)',
-  borderRadius: '3px',
+  color: vars.color.primary_text,
+  borderRadius: vars.borderRadius.s,
   display: 'flex',
   alignItems: 'center',
+  width: '100%',
   height: '25px',
-  padding: '0 35px 0 25px',
-  position: 'relative',
+  padding: '0 10px',
   userSelect: 'none',
   selectors: {
     '&[data-disabled]': {
-      color: 'var(--mauve8)',
-      pointerEvents: 'none',
+      outline: 'none',
+      color: vars.color.disabled_text,
+      backgroundColor: vars.color.disabled,
+      cursor: 'disabled',
     },
     '&[data-highlighted]': {
       outline: 'none',
-      backgroundColor: 'var(--violet9)',
-      color: 'var(--violet1)',
+      backgroundColor: vars.color.blue3,
     },
   },
 });
@@ -69,26 +117,16 @@ const selectLabel = style({
 
 const selectSeparator = style({
   height: '1px',
-  backgroundColor: 'var(--violet6)',
+  backgroundColor: vars.color.border,
   margin: '5px',
-});
-
-const selectItemIndicator = style({
-  position: 'absolute',
-  left: 0,
-  width: '25px',
-  display: 'inline-flex',
-  alignItems: 'center',
-  justifyContent: 'center',
 });
 
 const selectScrollButton = style({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  height: '25px',
-  backgroundColor: 'white',
-  color: 'var(--violet11)',
+  height: '20px',
+  color: vars.color.primary_text,
   cursor: 'default',
 });
 
@@ -99,6 +137,7 @@ export {
   selectItem,
   selectLabel,
   selectSeparator,
-  selectItemIndicator,
   selectScrollButton,
+  selectValue,
+  selectIcon,
 };

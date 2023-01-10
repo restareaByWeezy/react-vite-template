@@ -1,3 +1,4 @@
+import { vars } from '@/styles/vars.css';
 import { globalFontFace, globalStyle } from '@vanilla-extract/css';
 
 globalStyle('body', {
@@ -16,6 +17,27 @@ globalStyle('#root', {
   width: '100%',
   height: '100%',
   minHeight: '100vh',
+});
+
+// DRAG COLOR
+globalStyle('::selection', {
+  backgroundColor: vars.color.primary,
+  color: vars.color.white,
+});
+globalStyle('::-moz-selection', {
+  backgroundColor: vars.color.primary,
+  color: vars.color.white,
+});
+
+// FOCUS
+globalStyle(':focus', {
+  outlineColor: vars.color.primary,
+});
+globalStyle(':focus-visible', {
+  outlineColor: vars.color.primary,
+});
+globalStyle('::-moz-focus-inner', {
+  border: 0,
 });
 
 globalStyle(`*`, {
