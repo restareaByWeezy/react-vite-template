@@ -4,21 +4,21 @@ export const wrapper = recipe({
   base: {},
   variants: {
     size: {
-      s: {
+      sm: {
         width: '20px',
         height: '20px',
       },
-      m: {
+      md: {
         width: '40px',
         height: '40px',
       },
-      l: {
+      lg: {
         width: '60px',
         height: '60px',
       },
     },
   },
   defaultVariants: {
-    size: 'm',
+    size: 'md',
   },
 });

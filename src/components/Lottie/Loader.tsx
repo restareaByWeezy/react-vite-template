@@ -4,7 +4,7 @@ import { spinner } from '@/assets/lotties';
 import * as styles from './loader.css';
 
 interface LoaderProps {
-  size?: 's' | 'm' | 'l';
+  size?: 'sm' | 'md' | 'lg';
 }
 
 const Loader = ({ size }: LoaderProps) => {

@@ -37,7 +37,7 @@ const selectTrigger = recipe({
     alignItems: 'center',
     justifyContent: 'space-between',
     width: triggerWidth,
-    borderRadius: vars.borderRadius.s,
+    borderRadius: vars.borderRadius.sm,
     padding: '0 7px',
     fontSize: '13px',
     lineHeight: '1',
@@ -75,7 +75,7 @@ const selectContent = style({
   zIndex: vars.zIndices.DROPDOWN,
   overflow: 'hidden',
   backgroundColor: vars.color.white,
-  borderRadius: vars.borderRadius.m,
+  borderRadius: vars.borderRadius.md,
   boxShadow: vars.color.shadow,
   cursor: 'pointer',
 });
@@ -87,7 +87,7 @@ const selectViewport = style({
 const selectItem = style({
   lineHeight: '1',
   color: vars.color.primary_text,
-  borderRadius: vars.borderRadius.s,
+  borderRadius: vars.borderRadius.sm,
   display: 'flex',
   alignItems: 'center',
   width: '100%',

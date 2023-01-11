@@ -7,7 +7,7 @@ const base = {
   color: vars.color.primary_text,
   padding: '8px 6px',
   border: `1px solid ${vars.color.border}`,
-  borderRadius: vars.borderRadius.s,
+  borderRadius: vars.borderRadius.sm,
   backgroundColor: vars.color.white,
   transition: 'border-color 0.2s ease-in-out',
 
@@ -25,15 +25,15 @@ const base = {
 };
 const variants = {
   size: {
-    s: {
+    sm: {
       width: '30px',
       height: '30px',
     },
-    m: {
+    md: {
       width: '40px',
       height: '40px',
     },
-    l: {
+    lg: {
       width: '50px',
       height: '50px',
     },

@@ -12,15 +12,13 @@ const ScrollAreas = () => (
     <Text size="h2" weight="bold">
       Scroll Area
     </Text>
-    <ScrollArea>
-      <div className={styles.wrapper}>
-        <div className={styles.text}>Scroll Area</div>
-        {TAGS.map((tag) => (
-          <div className={styles.tag} key={tag}>
-            {tag}
-          </div>
-        ))}
-      </div>
+    <ScrollArea className={styles.wrapper}>
+      <div className={styles.text}>Scroll Area</div>
+      {TAGS.map((tag) => (
+        <div className={styles.tag} key={tag}>
+          {tag}
+        </div>
+      ))}
     </ScrollArea>
   </>
 );

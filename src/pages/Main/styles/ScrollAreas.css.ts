@@ -3,8 +3,8 @@ import { style } from '@vanilla-extract/css';
 export const wrapper = style({
   display: 'flex',
   flexDirection: 'column',
-  width: '100%',
-  height: '100%',
+  width: '200px',
+  height: '200px',
   backgroundColor: 'white',
   padding: '15px',
 });

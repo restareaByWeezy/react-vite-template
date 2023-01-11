@@ -18,9 +18,9 @@ const Loaders = () => {
       <Button onClick={handleClick}>Toggle</Button>
       {show && (
         <>
-          <Loader size="s" />
-          <Loader size="m" />
-          <Loader size="l" />
+          <Loader size="sm" />
+          <Loader size="md" />
+          <Loader size="lg" />
         </>
       )}
     </>
