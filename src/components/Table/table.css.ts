@@ -1,9 +1,11 @@
-import { vars } from '@/styles/vars.css';
 import { style } from '@vanilla-extract/css';
+import { recipe } from '@vanilla-extract/recipes';
+
+import { vars } from '@/styles/vars.css';
 
 export const table = style({
   width: '100%',
-  borderCollapse: 'collapse',
+  borderCollapse: 'separate',
   borderSpacing: 0,
   overflow: 'auto',
   border: `1px solid ${vars.color.border}`,
@@ -13,14 +15,17 @@ export const tableHead = style({
   border: `1px solid ${vars.color.border}`,
 });
 
-export const tr = style({
+export const tr = style({});
+
+export const td = style({
   selectors: {
-    '&:first-child': {
+    [`${tr} &:first-child`]: {
       position: 'sticky',
       left: 0,
       zIndex: vars.zIndices.TABLE_HEADER,
+      backgroundColor: vars.color.white,
     },
-    '&:second-child': {
+    [`${tr} &:second-child`]: {
       position: 'sticky',
       left: 40,
       zIndex: vars.zIndices.TABLE_HEADER,
@@ -56,4 +61,5 @@ export const scrollAreaWrapper = style({
   width: '100%',
   height: '100%',
   overflow: 'auto',
+  padding: '0 30px',
 });

@@ -1,17 +1,14 @@
 import React from 'react';
 
-import Col from '@/components/_Grid/Col';
-import Text from '@/components/Text/Text';
-import Table, { ColumnProps } from '@/components/Table';
 import Collapse from '@/components/Collapse';
+import Table from '@/components/Table';
+import { ColumnProps } from '@/components/Table/table';
+import Text from '@/components/Text/Text';
+
+import { tableData, TableDataprops } from '../_constants';
 
 const Tables = () => {
-  interface IData {
-    fullName: string;
-    role: string;
-    tags: string[];
-  }
-  const columns: ColumnProps<IData>[] = [
+  const columns: ColumnProps<TableDataprops>[] = [
     {
       key: 'fullName',
       title: 'Full Name',
@@ -38,27 +35,14 @@ const Tables = () => {
     },
   ];
 
-  const data: IData[] = [
-    {
-      fullName: 'Francisco Mendes',
-      role: 'Full Stack',
-      tags: ['dev', 'blogger'],
-    },
-    {
-      fullName: 'Ricardo Malva',
-      role: 'Social Media Manager',
-      tags: ['designer', 'photographer'],
-    },
-  ];
-
   return (
     <>
       <Text size="h2" weight="bold">
         Table
       </Text>
-      <Table data={data} columns={columns} size="sm" />
-      <Table data={data} columns={columns} size="md" />
-      <Table data={data} columns={columns} size="lg" />
+      <Table data={tableData} columns={columns} size="sm" />
+      <Table data={tableData} columns={columns} size="md" />
+      <Table data={tableData} columns={columns} size="lg" />
       <Collapse isLoading={true} renderer={<div>hi</div>} />
     </>
   );

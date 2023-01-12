@@ -1,18 +1,28 @@
-import React, {
-  Dispatch,
-  forwardRef,
-  Ref,
-  SetStateAction,
-  useState,
-} from 'react';
+import { ChevronDownIcon, ChevronUpIcon } from '@radix-ui/react-icons';
 import * as RadixSelect from '@radix-ui/react-select';
-import * as styles from './select.css';
 import cx from 'classnames';
-import {
-  CheckIcon,
-  ChevronDownIcon,
-  ChevronUpIcon,
-} from '@radix-ui/react-icons';
+import React, { Dispatch, forwardRef, SetStateAction } from 'react';
+
+import * as styles from './select.css';
+
+interface SelectItemProps extends RadixSelect.SelectItemProps {
+  children: React.ReactNode;
+  className?: string;
+}
+
+const SelectItem = forwardRef<HTMLInputElement, SelectItemProps>(
+  ({ children, className, ...props }, forwardedRef) => {
+    return (
+      <RadixSelect.Item
+        className={cx('SelectItem', className)}
+        ref={forwardedRef}
+        {...props}
+      >
+        <RadixSelect.ItemText>{children}</RadixSelect.ItemText>
+      </RadixSelect.Item>
+    );
+  },
+);
 
 interface SelectProps {
   items: string[];
@@ -33,7 +43,7 @@ const Select = ({
 }: SelectProps) => {
   const itemList = items.map((item) => {
     return (
-      <SelectItem className={styles.selectItem} value={item}>
+      <SelectItem key={item} className={styles.selectItem} value={item}>
         {item}
       </SelectItem>
     );
@@ -75,24 +85,5 @@ const Select = ({
     </RadixSelect.Root>
   );
 };
-
-interface SelectItemProps extends RadixSelect.SelectItemProps {
-  children: React.ReactNode;
-  className?: string;
-}
-
-const SelectItem = forwardRef<HTMLInputElement, SelectItemProps>(
-  ({ children, className, ...props }, forwardedRef) => {
-    return (
-      <RadixSelect.Item
-        className={cx('SelectItem', className)}
-        ref={forwardedRef}
-        {...props}
-      >
-        <RadixSelect.ItemText>{children}</RadixSelect.ItemText>
-      </RadixSelect.Item>
-    );
-  },
-);
 
 export default Select;

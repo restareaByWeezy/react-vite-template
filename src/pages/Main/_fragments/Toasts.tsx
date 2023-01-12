@@ -1,8 +1,9 @@
+import React, { Dispatch, Fragment, SetStateAction, useState } from 'react';
+
 import Button from '@/components/Button';
 import { button } from '@/components/Button/Button.css';
 import Text from '@/components/Text/Text';
 import Toast from '@/components/Toast';
-import React, { Dispatch, SetStateAction, useState } from 'react';
 
 type Direction = 'right' | 'left' | 'up' | 'down';
 
@@ -30,7 +31,7 @@ const Toasts = () => {
       state: boolean;
     }) => {
       return (
-        <>
+        <Fragment key={toast.direction}>
           <Button
             key={toast.direction}
             onClick={() => {
@@ -47,7 +48,7 @@ const Toasts = () => {
             close={'close'}
             closeStyle={button()}
           />
-        </>
+        </Fragment>
       );
     },
   );

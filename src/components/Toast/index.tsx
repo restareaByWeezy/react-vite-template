@@ -1,6 +1,7 @@
 import * as RadixToast from '@radix-ui/react-toast';
-import * as styles from './styles/toast.css';
 import { Dispatch, ReactNode, SetStateAction } from 'react';
+
+import * as styles from './styles/toast.css';
 
 interface ToastProps {
   openToast: boolean;
@@ -67,4 +68,4 @@ const Root = RadixToast.Root;
 const Title = RadixToast.Title;
 const Viewport = RadixToast.Viewport;
 
-export { Provider, Action, Close, Description, Root, Title, Viewport };
+export { Action, Close, Description, Provider, Root, Title, Viewport };

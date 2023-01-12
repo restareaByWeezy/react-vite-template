@@ -1,8 +1,8 @@
 import * as RadixScrollArea from '@radix-ui/react-scroll-area';
+import cx from 'classnames';
 import { ReactNode } from 'react';
 
 import * as styles from './ScrollArea.css';
-import cx from 'classnames';
 
 interface ScrollAreaProps {
   children?: ReactNode;

@@ -1,10 +1,9 @@
-import React, { forwardRef, ReactNode, Ref } from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
-import * as styles from './Modal.css';
+import cx from 'classnames';
+import React, { forwardRef, ReactNode, Ref } from 'react';
 
 import { button } from '../Button/Button.css';
-
-import cx from 'classnames';
+import * as styles from './Modal.css';
 
 type DialogContentPrimitiveProps = React.ComponentProps<typeof Dialog.Content>;
 type DialogContentProps = DialogContentPrimitiveProps;
@@ -52,4 +51,4 @@ const ModalTitle = Dialog.Title;
 const ModalDescription = Dialog.Description;
 const ModalTrigger = Dialog.Trigger;
 
-export { Modal, ModalClose, ModalTrigger, ModalTitle, ModalDescription };
+export { Modal, ModalClose, ModalDescription,ModalTitle, ModalTrigger };

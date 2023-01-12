@@ -1,6 +1,7 @@
+import { createVar,style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
+
 import { vars } from '@/styles/vars.css';
-import { style, createVar } from '@vanilla-extract/css';
 
 const triggerWidth = createVar();
 const triggerHeight = createVar();
@@ -131,13 +132,13 @@ const selectScrollButton = style({
 });
 
 export {
-  selectTrigger,
   selectContent,
-  selectViewport,
+  selectIcon,
   selectItem,
   selectLabel,
-  selectSeparator,
   selectScrollButton,
+  selectSeparator,
+  selectTrigger,
   selectValue,
-  selectIcon,
+  selectViewport,
 };

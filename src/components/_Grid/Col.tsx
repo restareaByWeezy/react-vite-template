@@ -1,5 +1,7 @@
 import { HTMLAttributes } from 'react';
 
+import { cx } from '@/styles/classNames';
+
 import { col, GridVariantProps } from './grid.css';
 
 interface ColProps extends HTMLAttributes<HTMLDivElement> {
@@ -15,10 +17,13 @@ const Col = ({
   return (
     <div
       {...rest}
-      className={col({
-        justify: justify,
-        align: align,
-      })}
+      className={cx(
+        col({
+          justify: justify,
+          align: align,
+        }),
+        rest.className,
+      )}
     >
       {children}
     </div>

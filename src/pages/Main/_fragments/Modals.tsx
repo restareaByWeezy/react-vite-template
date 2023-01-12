@@ -1,6 +1,7 @@
+import React from 'react';
+
 import { Modal } from '@/components/Modal';
 import Text from '@/components/Text/Text';
-import React from 'react';
 
 const Modals = () => {
   return (

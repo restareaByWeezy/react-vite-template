@@ -1,14 +1,15 @@
 import { recipe } from '@vanilla-extract/recipes';
+
 import {
   hide,
+  slideDown,
+  slideLeft,
+  slideRight,
   slideUp,
   swipeDown,
-  slideDown,
-  swipeUp,
-  slideLeft,
-  swipeRight,
-  slideRight,
   swipeLeft,
+  swipeRight,
+  swipeUp,
 } from './animation.css';
 
 export const toastRoot = recipe({

@@ -1,6 +1,6 @@
-import { vars } from '@/styles/vars.css';
-
 import { keyframes, style } from '@vanilla-extract/css';
+
+import { vars } from '@/styles/vars.css';
 
 const overlayShow = keyframes({
   from: {

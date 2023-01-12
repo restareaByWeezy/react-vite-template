@@ -1,6 +1,7 @@
+import React from 'react';
+
 import Card from '@/components/Card';
 import Text from '@/components/Text/Text';
-import React from 'react';
 
 const Cards = () => {
   return (

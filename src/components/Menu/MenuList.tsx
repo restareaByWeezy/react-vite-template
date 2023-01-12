@@ -1,4 +1,5 @@
 import React, { MouseEvent, useState } from 'react';
+
 import * as styles from './MenuList.css';
 
 interface ChildMenuProps {
@@ -22,7 +23,7 @@ const MenuList = ({ menus, onClick }: MenusProps) => {
 
   const handleClickMenu = (e: MouseEvent<HTMLLIElement>) => {
     const { id } = e.currentTarget;
-    const menu = menus.find((menu) => menu.id === id);
+    const menu = menus.find((m) => m.id === id);
     if (menu?.child) {
       setShowChildMenu(!showChildMenu);
       return;

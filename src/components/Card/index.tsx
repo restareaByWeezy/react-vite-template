@@ -1,8 +1,8 @@
-import * as styles from './card.css';
 import cx from 'classnames';
-import { col } from '../_Grid/grid.css';
 import { HTMLAttributes, ReactNode } from 'react';
-import ScrollArea from '../ScrollArea';
+
+import { col } from '../_Grid/grid.css';
+import * as styles from './card.css';
 
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
   size?: 'sm' | 'md' | 'lg';

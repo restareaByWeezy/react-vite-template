@@ -1,7 +1,8 @@
+import { useState } from 'react';
+
 import Button from '@/components/Button';
 import Loader from '@/components/Lottie/Loader';
 import Text from '@/components/Text/Text';
-import { useState } from 'react';
 
 const Loaders = () => {
   const [show, setShow] = useState(false);

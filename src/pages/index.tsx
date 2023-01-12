@@ -1,5 +1,6 @@
 import TestDnd from '@/components/Menu/TestDnd';
 import Text from '@/components/Text/Text';
+
 import Buttons from './Main/_fragments/Buttons';
 import Cards from './Main/_fragments/Cards';
 import Cols from './Main/_fragments/Cols';
@@ -11,6 +12,7 @@ import Modals from './Main/_fragments/Modals';
 import Rows from './Main/_fragments/Rows';
 import ScrollAreas from './Main/_fragments/ScrollAreas';
 import Selects from './Main/_fragments/Selects';
+import SimpleLists from './Main/_fragments/SimpleLists';
 import Tables from './Main/_fragments/Tables';
 import Texts from './Main/_fragments/Texts';
 import Toasts from './Main/_fragments/Toasts';
@@ -34,6 +36,7 @@ const Main = () => {
       <Loaders />
       <Tables />
       <Cards />
+      <SimpleLists />
     </>
   );
 };

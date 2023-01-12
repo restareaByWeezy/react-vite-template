@@ -1,5 +1,6 @@
-import { vars } from '@/styles/vars.css';
 import { globalFontFace, globalStyle } from '@vanilla-extract/css';
+
+import { vars } from '@/styles/vars.css';
 
 globalStyle('body', {
   width: '100%',
@@ -57,6 +58,12 @@ globalStyle(`input, button, textarea, select`, {
 
 globalStyle(`p, h1, h2, h3, h4, h5, h6`, {
   overflowWrap: `break-word`,
+  all: 'unset',
+});
+
+globalStyle('ul, li', {
+  all: 'unset',
+  listStyle: 'none',
 });
 
 globalFontFace('Pretendard-Regular', {

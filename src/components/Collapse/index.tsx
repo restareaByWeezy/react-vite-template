@@ -1,5 +1,7 @@
-import { CarretDown, CarretRight } from '@/assets/svgs';
 import { ReactNode, useState } from 'react';
+
+import { CarretDown, CarretRight } from '@/assets/svgs';
+
 import Loader from '../Lottie/Loader';
 
 interface CollapseProps {

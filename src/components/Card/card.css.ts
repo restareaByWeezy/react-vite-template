@@ -1,5 +1,6 @@
-import { vars } from '@/styles/vars.css';
 import { recipe } from '@vanilla-extract/recipes';
+
+import { vars } from '@/styles/vars.css';
 
 export const wrapper = recipe({
   base: {

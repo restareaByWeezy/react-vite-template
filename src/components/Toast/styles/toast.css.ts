@@ -1,6 +1,7 @@
-import { toastRoot } from './toastRoot.css';
 import { style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
+
+import { toastRoot } from './toastRoot.css';
 import { toastHeight, toastWidth, viewportPadding } from './vars.css';
 
 const toastViewport = recipe({
@@ -62,4 +63,4 @@ export const ToastAction = style({
   gridArea: 'action',
 });
 
-export { toastViewport, toastTitle, toastDescription, toastRoot };
+export { toastDescription, toastRoot,toastTitle, toastViewport };

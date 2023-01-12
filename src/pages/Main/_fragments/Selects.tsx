@@ -1,6 +1,7 @@
+import React from 'react';
+
 import Select from '@/components/Select';
 import Text from '@/components/Text/Text';
-import React from 'react';
 
 const Selects = () => {
   const [value, setValue] = React.useState('1');

@@ -1,6 +1,7 @@
+import React from 'react';
+
 import MenuList from '@/components/Menu/MenuList';
 import Text from '@/components/Text/Text';
-import React from 'react';
 
 const data = [
   {

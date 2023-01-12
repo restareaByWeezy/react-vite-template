@@ -1,4 +1,5 @@
 import { keyframes } from '@vanilla-extract/css';
+
 import { viewportPadding } from './vars.css';
 const hide = keyframes({
   from: {
@@ -89,12 +90,12 @@ const swipeUp = keyframes({
 
 export {
   hide,
+  slideDown,
   slideLeft,
   slideRight,
   slideUp,
-  slideDown,
-  swipeRight,
-  swipeLeft,
   swipeDown,
+  swipeLeft,
+  swipeRight,
   swipeUp,
 };

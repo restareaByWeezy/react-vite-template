@@ -1,4 +1,5 @@
 import Lottie from 'react-lottie-player';
+
 import { spinner } from '@/assets/lotties';
 
 import * as styles from './loader.css';

@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
 import {
-  Tree,
   getBackendOptions,
   MultiBackend,
+  Tree,
 } from '@minoru/react-dnd-treeview';
+import React, { useState } from 'react';
 import { DndProvider } from 'react-dnd';
+
 import { treeData } from './_fakeData';
 
 const TestDnd = () => {
