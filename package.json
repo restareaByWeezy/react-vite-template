@@ -3,12 +3,10 @@
   "private": true,
   "scripts": {
     "build": "vite build",
-    "build-storybook": "build-storybook",
     "cz": "./.yarn/unplugged/cz-customizable-npm-7.0.0-1704ad9243/node_modules/cz-customizable/standalone.js",
     "dev": "vite --host 0.0.0.0",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx,.mdx .",
-    "lint --fix": "eslint --ext .js,.jsx,.ts,.tsx,.mdx . --fix",
-    "storybook": "start-storybook -p 6006"
+    "lint --fix": "eslint --ext .js,.jsx,.ts,.tsx,.mdx . --fix"
   },
   "config": {
     "cz-customizable": {
@@ -38,19 +36,10 @@
     "react": "^18.2.0",
     "react-dnd": "^16.0.1",
     "react-dom": "^18.2.0",
-    "react-grid-layout": "^1.3.4",
-    "vite-plugin-svgr": "^2.4.0",
-    "zustand": "^4.2.0"
+    "vite-plugin-svgr": "^2.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
-    "@mdx-js/react": "^1.6.22",
-    "@storybook/addon-actions": "^6.5.15",
-    "@storybook/addon-docs": "^6.5.15",
-    "@storybook/addon-essentials": "^6.5.15",
-    "@storybook/addon-interactions": "^6.5.15",
-    "@storybook/addon-links": "^6.5.15",
-    "@storybook/builder-vite": "^0.2.7",
     "@storybook/react": "^6.5.15",
     "@storybook/testing-library": "^0.0.13",
     "@types/lodash": "^4.14.191",
