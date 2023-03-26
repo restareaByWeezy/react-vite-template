@@ -1,7 +1,9 @@
 import React from 'react';
 
+import Col from '@/common/_Grid/Col';
 import Row from '@/common/_Grid/Row';
 import Text from '@/common/Text/Text';
+import { vars } from '@/styles/vars.css';
 
 import * as styles from '../styles/calendarStyle.css';
 
@@ -20,12 +22,22 @@ const CalendarToolbar = ({ date, onNavigate }: CalendarToolbarProps) => {
   // };
 
   return (
-    <div className={styles.toolbar}>
+    <Col style={{ gap: vars.space.s16 }} className={styles.toolbar}>
       <Text weight="semiBold" size="h2">
         {`${date.getFullYear()}년 ${date.getMonth() + 1}월`}
       </Text>
-      <Row className={styles.badgeWrapper}>badges</Row>
-    </div>
+      <Row justify="between" className={styles.badgeWrapper}>
+        <Row style={{ gap: vars.space.s8 }}>
+          <Text weight="semiBold" size="h2">
+            532,100
+          </Text>
+          <Text weight="semiBold" size="h2">
+            원
+          </Text>
+        </Row>
+        <div>badges</div>
+      </Row>
+    </Col>
   );
 };
 

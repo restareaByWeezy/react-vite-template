@@ -3,10 +3,21 @@ import '../styles/calendarStyle.css';
 
 import dayjs from 'dayjs';
 import { useState } from 'react';
-import { Calendar, dayjsLocalizer, Event } from 'react-big-calendar';
+import {
+  Calendar,
+  dayjsLocalizer,
+  Event,
+  EventProps,
+} from 'react-big-calendar';
 
 import CalendarHeader from './CalendarHeader';
 import CalendarToolbar from './CalendarToolbar';
+import DateBadge from './DateBadge';
+
+type DateBadgeProps = EventProps & {
+  color: string;
+  text: string;
+};
 
 const CustomCalendar = () => {
   dayjs.locale('ko');
@@ -15,8 +26,8 @@ const CustomCalendar = () => {
   const [events, setEvents] = useState<Event[]>([
     {
       title: '철수',
-      start: new Date(),
-      end: new Date(),
+      start: dayjs('2023-03-22').toDate(),
+      end: dayjs('2023-03-22').toDate(),
       resource: 'ㅇㅇ',
     },
   ]);
@@ -28,6 +39,9 @@ const CustomCalendar = () => {
         onView={(month: string) => {
           return;
         }}
+        formats={{
+          dateFormat: 'D',
+        }}
         defaultDate={new Date()}
         components={{
           toolbar: CalendarToolbar,
@@ -37,7 +51,7 @@ const CustomCalendar = () => {
         events={events}
         startAccessor="start"
         endAccessor="end"
-        style={{ height: 500 }}
+        style={{ height: 'calc(100vh - 109px)' }}
       />
     </div>
   );

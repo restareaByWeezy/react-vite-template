@@ -3,17 +3,17 @@ import { ReactNode } from 'react';
 import * as styles from './layoutStyle.css';
 
 interface LayoutProps {
-  header?: ReactNode;
   main?: ReactNode;
-  footer?: ReactNode;
+  topNav?: ReactNode;
+  bottomNav?: ReactNode;
 }
 
-const Layout = ({ header, main, footer }: LayoutProps) => {
+const Layout = ({ main, topNav, bottomNav }: LayoutProps) => {
   return (
     <div className={styles.container}>
-      {header && <header>{header}</header>}
+      {topNav && <nav className={styles.topNav}>{topNav}</nav>}
       {main && <main className={styles.main}>{main}</main>}
-      {footer && <footer>{footer}</footer>}
+      {bottomNav && <nav className={styles.bottomNav}>{bottomNav}</nav>}
     </div>
   );
 };

@@ -37,6 +37,12 @@ const variants = {
     tertiary: {
       color: vars.color.tertiary_text,
     },
+    blue: {
+      color: vars.color.blue_text,
+    },
+    red: {
+      color: vars.color.red_text,
+    },
   },
   weight: {
     semiBold: {

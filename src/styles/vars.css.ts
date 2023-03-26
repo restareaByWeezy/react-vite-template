@@ -7,13 +7,16 @@ export const vars = createGlobalTheme(':root', {
   space: {
     none: '0',
     xxs: '2px',
-    xs: '4px',
     sm: '6px',
     md: '8px',
     lg: '10px',
     xl: '15px',
     xxl: '20px',
     xxxl: '25px',
+    s4: '4px',
+    s8: '8px',
+    s14: '14px',
+    s16: '16px',
     s20: '20px',
     s24: '24px',
   },
@@ -22,7 +25,7 @@ export const vars = createGlobalTheme(':root', {
     sm: '4px',
     md: '6px',
     lg: '8px',
-    xl: '10px',
+    xl: '20px',
   },
   fontFamily: {
     body: 'SUIT-Regular, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
@@ -30,9 +33,9 @@ export const vars = createGlobalTheme(':root', {
     mono: 'Söhne Mono, menlo, monospace',
   },
   fontSize: {
-    h1: '32px',
+    h1: '34px',
     h2: '28px',
-    h4: '18px',
+    h4: '17px',
     body1: '14px',
     body2: '12px',
     body3: '11px',
@@ -83,9 +86,11 @@ export const vars = createGlobalTheme(':root', {
 
     // TextColor
     primary_text: '#1b1d1f', //Gray 8
-    secondary_text: '#464c53', //Gray 6
+    secondary_text: '#666666', //Gray 6
     tertiary_text: '#9ea4aa', //Gray 4
     white: '#ffffff',
+    red_text: '#FF513C', //Red
+    blue_text: '#4DAAFF', //Blue
 
     // btn
     primary_btn: '#429AEB',
@@ -120,5 +125,13 @@ export const vars = createGlobalTheme(':root', {
     shadow: '0 2px 8px rgb(0 0 0 / 15%)',
 
     // BADGE
+    badge_bg_first: '#FFE6FA',
+    badge_bg_second: '#FFE435',
+    badge_bg_third: '#9FE499',
+    badge_bg_fourth: '#F7F7F7',
+    badge_first: '#FF09C9',
+    badge_second: '#FFFCEB',
+    badge_third: '#9FE499',
+    badge_fourth: '#ABB2AB',
   },
 });

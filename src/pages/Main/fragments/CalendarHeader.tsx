@@ -24,7 +24,11 @@ const CalendarHeader = ({ label }: CustomCalendarHeaderProps) => {
   const isSat = label === 'Sat';
   const isSun = label === 'Sun';
 
-  return <Text>{labelKr[label]}</Text>;
+  return (
+    <Text color={isSat ? 'blue' : isSun ? 'red' : 'secondary'}>
+      {labelKr[label]}
+    </Text>
+  );
 };
 
 export default CalendarHeader;

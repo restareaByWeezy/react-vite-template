@@ -7,7 +7,7 @@ globalStyle('body', {
   height: '100%',
   minHeight: '100vh',
   boxSizing: 'border-box',
-  lineHeight: 1.5,
+  lineHeight: 1.2,
   WebkitFontSmoothing: `antialiased`,
   fontFamily: 'SUIT-Regular',
   paddingRight: 'calc(var(--removed-body-scroll-bar-size )) !important', // FIX: radix scroll library bug must be fixed
