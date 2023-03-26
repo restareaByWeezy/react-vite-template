@@ -9,7 +9,7 @@ globalStyle('body', {
   boxSizing: 'border-box',
   lineHeight: 1.5,
   WebkitFontSmoothing: `antialiased`,
-  fontFamily: 'Pretendard-Regular',
+  fontFamily: 'SUIT-Regular',
   paddingRight: 'calc(var(--removed-body-scroll-bar-size )) !important', // FIX: radix scroll library bug must be fixed
 });
 
@@ -18,6 +18,9 @@ globalStyle('#root', {
   width: '100%',
   height: '100%',
   minHeight: '100vh',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
 });
 
 // DRAG COLOR
@@ -66,6 +69,6 @@ globalStyle('ul, li', {
   listStyle: 'none',
 });
 
-globalFontFace('Pretendard-Regular', {
-  src: 'https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff',
+globalFontFace('SUIT-Regular', {
+  src: "url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2')",
 });

@@ -1,10 +1,9 @@
-import { wrapper } from './App.css';
-import Main from './pages';
+import Router from './pages/Router';
 
 const App = () => (
-  <div className={wrapper}>
-    <Main />
-  </div>
+  <>
+    <Router />
+  </>
 );
 
 export default App;

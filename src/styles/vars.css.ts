@@ -14,6 +14,8 @@ export const vars = createGlobalTheme(':root', {
     xl: '15px',
     xxl: '20px',
     xxxl: '25px',
+    s20: '20px',
+    s24: '24px',
   },
   borderRadius: {
     full: '99999px',
@@ -23,13 +25,13 @@ export const vars = createGlobalTheme(':root', {
     xl: '10px',
   },
   fontFamily: {
-    body: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+    body: 'SUIT-Regular, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
     untitled: 'Untitled Sans, apple-system, sans-serif',
     mono: 'Söhne Mono, menlo, monospace',
   },
   fontSize: {
     h1: '32px',
-    h2: '26px',
+    h2: '28px',
     h4: '18px',
     body1: '14px',
     body2: '12px',
@@ -116,5 +118,7 @@ export const vars = createGlobalTheme(':root', {
 
     // shadow
     shadow: '0 2px 8px rgb(0 0 0 / 15%)',
+
+    // BADGE
   },
 });
