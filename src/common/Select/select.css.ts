@@ -1,144 +1,97 @@
-import { createVar,style } from '@vanilla-extract/css';
-import { recipe } from '@vanilla-extract/recipes';
+import { style } from '@vanilla-extract/css';
 
 import { vars } from '@/styles/vars.css';
 
-const triggerWidth = createVar();
-const triggerHeight = createVar();
-
-const selectTrigger = recipe({
-  variants: {
-    size: {
-      small: {
-        vars: {
-          [triggerWidth]: '50px',
-          [triggerHeight]: '25px',
-        },
-      },
-      medium: {
-        vars: {
-          [triggerWidth]: '100px',
-          [triggerHeight]: '35px',
-        },
-      },
-      large: {
-        vars: {
-          [triggerWidth]: '150px',
-          [triggerHeight]: '45px',
-        },
-      },
-    },
-  },
-  defaultVariants: {
-    size: 'small',
-  },
-  base: {
-    position: 'relative',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    width: triggerWidth,
-    borderRadius: vars.borderRadius.sm,
-    padding: '0 7px',
-    fontSize: '13px',
-    lineHeight: '1',
-    height: triggerHeight,
-    gap: '5px',
-    backgroundColor: 'white',
-    border: `1px solid ${vars.color.gray3}`,
-    selectors: {
-      '&:hover': {
-        backgroundColor: vars.color.g_trans1,
-      },
-      '&[data-placeholder]': {
-        color: vars.color.gray8,
-      },
-    },
-    vars: {
-      [triggerHeight]: '35px',
-    },
-  },
+export const wrapper = style({
+  position: 'relative',
+  width: 'fit-content',
+  height: 'fit-content',
 });
 
-const selectValue = style({
+export const selectTrigger = style({
+  position: 'relative',
   display: 'flex',
   alignItems: 'center',
-  overflow: 'hidden',
-  textOverflow: 'ellipsis',
+  justifyContent: 'space-between',
+  borderRadius: vars.borderRadius.sm,
+  padding: '4px 7px',
+  fontSize: vars.fontSize.body2,
+  gap: '5px',
+  backgroundColor: vars.color.white,
+  border: `1px solid ${vars.color.gray3}`,
+  selectors: {
+    '&:hover': {
+      backgroundColor: vars.color.gray1,
+    },
+    '&[data-placeholder]': {
+      color: vars.color.gray5,
+    },
+  },
+});
+
+export const selectValue = style({
+  display: 'flex',
+  width: '100%',
+  height: '100%',
   whiteSpace: 'nowrap',
+  alignItems: 'center',
 });
 
-const selectIcon = style({
-  color: vars.color.gray8,
+export const selectIcon = style({
+  width: '15px',
+  color: vars.color.gray5,
 });
 
-const selectContent = style({
+export const selectContent = style({
+  position: 'absolute',
+  width: 'auto',
+  marginTop: '5px',
   zIndex: vars.zIndices.DROPDOWN,
   overflow: 'hidden',
   backgroundColor: vars.color.white,
-  borderRadius: vars.borderRadius.md,
+  borderRadius: vars.borderRadius.sm,
   boxShadow: vars.color.shadow,
   cursor: 'pointer',
+  fontSize: vars.fontSize.body2,
 });
 
-const selectViewport = style({
-  padding: '5px',
-});
+export const selectViewport = style({});
 
-const selectItem = style({
-  lineHeight: '1',
-  color: vars.color.primary_text,
-  borderRadius: vars.borderRadius.sm,
+export const selectItem = style({
   display: 'flex',
   alignItems: 'center',
   width: '100%',
   height: '25px',
-  padding: '0 10px',
+  color: vars.color.text_base,
+  lineHeight: '1',
   userSelect: 'none',
+  padding: '0 10px',
+  whiteSpace: 'nowrap',
   selectors: {
-    '&[data-disabled]': {
+    '&:hover': {
       outline: 'none',
-      color: vars.color.disabled_text,
-      backgroundColor: vars.color.disabled,
-      cursor: 'disabled',
-    },
-    '&[data-highlighted]': {
-      outline: 'none',
-      backgroundColor: vars.color.blue3,
+      backgroundColor: vars.color.primary,
+      color: vars.color.white,
     },
   },
 });
 
-const selectLabel = style({
+export const selectLabel = style({
   padding: '0 25px',
-  fontSize: '12px',
   lineHeight: '25px',
-  color: 'var(--mauve11)',
 });
 
-const selectSeparator = style({
+export const selectSeparator = style({
   height: '1px',
   backgroundColor: vars.color.border,
   margin: '5px',
 });
 
-const selectScrollButton = style({
+export const selectScrollButton = style({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
   height: '20px',
-  color: vars.color.primary_text,
+  color: vars.color.text_base,
   cursor: 'default',
 });
-
-export {
-  selectContent,
-  selectIcon,
-  selectItem,
-  selectLabel,
-  selectScrollButton,
-  selectSeparator,
-  selectTrigger,
-  selectValue,
-  selectViewport,
-};

@@ -4,7 +4,7 @@ import { vars } from '@/styles/vars.css';
 
 const base = {
   fontSize: vars.fontSize.body1,
-  color: vars.color.primary_text,
+  color: vars.color.text_base,
   padding: '8px 6px',
   border: `1px solid ${vars.color.border}`,
   borderRadius: vars.borderRadius.sm,
@@ -14,7 +14,7 @@ const base = {
   selectors: {
     '&:hover': {
       outline: 'none',
-      backgroundColor: vars.color.g_trans1,
+      backgroundColor: vars.color.gray1,
     },
     '&:focus': {
       outline: 'none',

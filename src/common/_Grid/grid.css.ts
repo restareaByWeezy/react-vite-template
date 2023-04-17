@@ -1,10 +1,13 @@
 import { recipe, RecipeVariants } from '@vanilla-extract/recipes';
 
 const variants = {
-  justify: {
+  childPosition: {
     center: {
       justifyContent: 'center',
+      alignItems: 'center',
     },
+  },
+  justify: {
     start: {
       justifyContent: 'flex-start',
     },
@@ -16,6 +19,12 @@ const variants = {
     },
     around: {
       justifyContent: 'space-around',
+    },
+    center: {
+      justifyContent: 'center',
+    },
+    reverse: {
+      justifyContent: 'flex-end',
     },
   },
   align: {
@@ -33,6 +42,13 @@ const variants = {
     },
     baseline: {
       alignItems: 'baseline',
+    },
+  },
+  size: {
+    full: {
+      width: '100%',
+      height: '100%',
+      flex: 1,
     },
   },
   defaultVariants: {

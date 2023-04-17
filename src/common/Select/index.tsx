@@ -1,8 +1,9 @@
 import { ChevronDownIcon, ChevronUpIcon } from '@radix-ui/react-icons';
 import * as RadixSelect from '@radix-ui/react-select';
 import cx from 'classnames';
-import React, { Dispatch, forwardRef, SetStateAction } from 'react';
+import React, { forwardRef } from 'react';
 
+import Text from '../Text/Text';
 import * as styles from './select.css';
 
 interface SelectItemProps extends RadixSelect.SelectItemProps {
@@ -30,16 +31,15 @@ interface SelectProps {
   placeholder?: string;
   size?: 'small' | 'medium' | 'large';
   value: string;
-  setValue: Dispatch<SetStateAction<string>>;
+  onChange: (value: string) => void;
 }
 
 const Select = ({
   items,
   label,
   placeholder,
-  size,
   value,
-  setValue,
+  onChange,
 }: SelectProps) => {
   const itemList = items.map((item) => {
     return (
@@ -48,17 +48,12 @@ const Select = ({
       </SelectItem>
     );
   });
+
   return (
-    <RadixSelect.Root value={value} onValueChange={setValue}>
-      <RadixSelect.Trigger
-        className={styles.selectTrigger({ size: size })}
-        aria-label={label}
-      >
-        <RadixSelect.Value
-          placeholder={placeholder}
-          className={styles.selectValue}
-        >
-          {value}
+    <RadixSelect.Root value={value} onValueChange={onChange}>
+      <RadixSelect.Trigger className={styles.selectTrigger} aria-label={label}>
+        <RadixSelect.Value placeholder={placeholder}>
+          <Text className={styles.selectValue}>{value}</Text>
         </RadixSelect.Value>
         <RadixSelect.Icon className={styles.selectIcon}>
           <ChevronDownIcon />

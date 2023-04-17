@@ -1,3 +1,4 @@
+import { style } from '@vanilla-extract/css';
 import { recipe, RecipeVariants } from '@vanilla-extract/recipes';
 
 import { vars } from '@/styles/vars.css';
@@ -21,87 +22,128 @@ const variants = {
       color: vars.color.white,
       selectors: {
         '&:active': {
-          backgroundColor: vars.color.blue6,
+          backgroundColor: vars.color.primary_pressed,
         },
         '&:hover': {
-          backgroundColor: vars.color.blue6,
+          backgroundColor: vars.color.primary_pressed,
         },
       },
     },
     secondary: {
-      backgroundColor: vars.color.gray6,
+      backgroundColor: vars.color.gray5,
       color: vars.color.white,
       selectors: {
         '&:active': {
-          backgroundColor: vars.color.gray7,
+          backgroundColor: vars.color.gray5,
         },
         '&:hover': {
-          backgroundColor: vars.color.gray7,
+          backgroundColor: vars.color.gray5,
         },
       },
     },
     tertiary: {
       backgroundColor: vars.color.gray2,
-      color: vars.color.gray6,
+      color: vars.color.gray5,
       selectors: {
         '&:active': {
           backgroundColor: vars.color.gray3,
         },
         '&:hover': {
           backgroundColor: vars.color.gray3,
+        },
+      },
+    },
+    warning: {
+      backgroundColor: vars.color.warning,
+      color: vars.color.white,
+      selectors: {
+        '&:active': {
+          backgroundColor: vars.color.warning_sub,
+        },
+        '&:hover': {
+          backgroundColor: vars.color.warning_sub,
         },
       },
     },
   },
   sizes: {
-    sm: { padding: '12px 20px', fontSize: vars.fontSize.body1 },
-    md: { padding: '16px 24px', fontSize: vars.fontSize.body1 },
-    lg: { padding: '18px 24px', fontSize: vars.fontSize.body1 },
+    sm: {
+      padding: '8px 16px',
+      fontSize: vars.fontSize.body1,
+      borderRadius: vars.borderRadius.sm,
+    },
+    borderRadius: vars.borderRadius.lg,
+    md: {
+      padding: '10px 18px',
+      fontSize: vars.fontSize.body1,
+      borderRadius: vars.borderRadius.md,
+    },
+    lg: {
+      padding: '16px 24px',
+      fontSize: vars.fontSize.body1,
+      borderRadius: vars.borderRadius.lg,
+    },
+    xl: {
+      padding: '18px 26px',
+      fontSize: vars.fontSize.h3,
+      borderRadius: vars.borderRadius.lg,
+    },
+    full: {
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      width: '100%',
+      padding: '16px 0',
+    },
   },
   radii: {
-    rect: { borderRadius: '4px' },
+    rect: { borderRadius: '12px' },
     round: { borderRadius: '30px' },
   },
   outlined: {
     primary: {
-      border: 'solid 1pxvars.color.primary',
-      color: vars.color.primary_text,
-      backgroundColor: 'transparent',
-      '&:active': {
-        backgroundColor: 'rgba(217, 244, 254, 0.32)',
-      },
-      '&:hover': {
-        backgroundColor: 'rgba(217, 244, 254, 0.32)',
+      border: `solid 1px ${vars.color.gray3}`,
+      color: vars.color.text_base,
+      backgroundColor: 'inherit',
+      selectors: {
+        '&:active': {
+          backgroundColor: vars.color.gray1,
+        },
+        '&:hover': {
+          backgroundColor: vars.color.gray1,
+        },
       },
     },
     secondary: {
-      border: 'solid 1pxvars.color.secondary',
-      color: vars.color.secondary_text,
-      backgroundColor: 'transparent',
-      '&:active': {
-        backgroundColor: vars.color.gray1,
-      },
-      '&:hover': {
-        backgroundColor: vars.color.gray1,
+      border: `solid 1px ${vars.color.secondary}`,
+      color: vars.color.text_gray,
+      backgroundColor: 'inherit',
+      selectors: {
+        '&:active': {
+          backgroundColor: vars.color.gray1,
+        },
+        '&:hover': {
+          backgroundColor: vars.color.gray1,
+        },
       },
     },
     tertiary: {
       border: 'solid 1pxvars.color.tertiary',
-      color: vars.color.tertiary_text,
-      backgroundColor: 'transparent',
+      color: vars.color.text_text,
+      backgroundColor: 'inherit',
       selectors: {
         '&:active': {
-          backgroundColor: vars.color.g_trans1,
+          backgroundColor: vars.color.gray1,
         },
         '&:hover': {
-          backgroundColor: vars.color.g_trans1,
+          backgroundColor: vars.color.gray1,
         },
       },
     },
   },
   types: {
     badge: {
-      color: vars.color.primary_text,
+      color: vars.color.text_base,
       backgroundColor: vars.color.gray2,
       padding: '10px 16px',
       borderRadius: '17px',
@@ -113,24 +155,24 @@ const variants = {
         '&:hover': {
           backgroundColor: vars.color.tertiary_pressed,
         },
-        // '& svg': {
-        //   width: '14px',
-        //   height: '14px',
-        // },
       },
     },
+    loader: {
+      padding: '0px',
+    },
     default: {
-      backgroundColor: 'transparent',
-      color: vars.color.secondary_text,
+      backgroundColor: 'inherit',
+      color: vars.color.text_gray,
       fontSize: vars.fontSize.body2,
       padding: '0px',
       border: 'none',
+
       selectors: {
         '&:active': {
-          backgroundColor: 'transparent',
+          backgroundColor: 'inherit',
         },
         '&:hover': {
-          backgroundColor: 'transparent',
+          backgroundColor: 'inherit',
         },
       },
     },
@@ -139,12 +181,22 @@ const variants = {
 
 // STYLE TEXT //////////////////////////
 export const button = recipe({
-  base: base,
+  base: {
+    ...base,
+    textAlign: 'center',
+  },
   variants: variants,
   defaultVariants: {
     color: 'primary',
     radii: 'rect',
     sizes: 'md',
+  },
+});
+
+export const loading = style({});
+export const childSvgStyle = style({
+  selectors: {
+    [`${loading} &`]: {},
   },
 });
 

@@ -4,15 +4,21 @@ import { vars } from '@/styles/vars.css';
 
 const base = {
   fontSize: vars.fontSize.body1,
-  color: vars.color.primary_text,
+  color: vars.color.text_base,
 };
 const variants = {
   size: {
+    headline: {
+      fontSize: vars.fontSize.headline,
+    },
     h1: {
       fontSize: vars.fontSize.h1,
     },
     h2: {
       fontSize: vars.fontSize.h2,
+    },
+    h3: {
+      fontSize: vars.fontSize.h3,
     },
     h4: {
       fontSize: vars.fontSize.h4,
@@ -29,13 +35,25 @@ const variants = {
   },
   color: {
     primary: {
-      color: vars.color.primary_text,
+      color: vars.color.text_base,
     },
     secondary: {
-      color: vars.color.secondary_text,
+      color: vars.color.text_gray,
     },
     tertiary: {
-      color: vars.color.tertiary_text,
+      color: vars.color.text_text,
+    },
+    white: {
+      color: vars.color.text_white,
+    },
+    colorPrimary: {
+      color: vars.color.primary,
+    },
+    colorSecondary: {
+      color: vars.color.secondary,
+    },
+    inherit: {
+      color: 'inherit',
     },
   },
   weight: {

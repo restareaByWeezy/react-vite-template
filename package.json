@@ -17,14 +17,14 @@
     "esbuild": "^0.14.43"
   },
   "dependencies": {
-    "@minoru/react-dnd-treeview": "^3.4.1",
     "@radix-ui/colors": "^0.1.8",
     "@radix-ui/react-dialog": "^1.0.2",
     "@radix-ui/react-icons": "^1.1.1",
     "@radix-ui/react-scroll-area": "^1.0.2",
     "@radix-ui/react-select": "^1.1.2",
     "@radix-ui/react-toast": "^1.1.2",
-    "@tanstack/react-query": "^4.20.4",
+    "@tanstack/react-query": "^4.29.3",
+    "@tanstack/react-query-devtools": "^4.29.3",
     "@vanilla-extract/dynamic": "^2.0.3",
     "@vanilla-extract/recipes": "^0.3.0",
     "@vanilla-extract/sprinkles": "^1.5.1",
