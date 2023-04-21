@@ -3,6 +3,7 @@ import { recipe, RecipeVariants } from '@vanilla-extract/recipes';
 import { vars } from '@/styles/vars.css';
 
 const base = {
+  width: 'fit-content',
   fontSize: vars.fontSize.body1,
   color: vars.color.text_base,
   padding: '8px 6px',

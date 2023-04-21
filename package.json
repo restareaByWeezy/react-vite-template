@@ -30,12 +30,14 @@
     "@vanilla-extract/sprinkles": "^1.5.1",
     "axios": "^1.2.2",
     "dayjs": "^1.11.7",
+    "jotai": "^2.0.4",
     "lodash": "^4.17.21",
     "normalize.css": "^8.0.1",
     "polished": "^4.2.2",
     "react": "^18.2.0",
     "react-dnd": "^16.0.1",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.10.0",
     "vite-plugin-svgr": "^2.4.0"
   },
   "devDependencies": {

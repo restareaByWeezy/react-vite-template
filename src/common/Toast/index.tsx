@@ -1,29 +1,34 @@
 import * as RadixToast from '@radix-ui/react-toast';
-import { Dispatch, ReactNode, SetStateAction } from 'react';
+import { ReactNode } from 'react';
 
 import * as styles from './styles/toast.css';
 
+export type ToastType = 'success' | 'error' | 'warning' | 'info';
+
 interface ToastProps {
   openToast: boolean;
-  setOpenToast: Dispatch<SetStateAction<boolean>> | ((open: boolean) => void);
-
+  handleOpenToast?: () => void;
   title?: ReactNode;
   description?: ReactNode;
+  type?: ToastType;
   action?: ReactNode;
   close?: ReactNode | string;
   closeStyle?: string;
   direction?: 'left' | 'right' | 'up' | 'down';
+  page?: 'dashboard';
 }
 
 const Toast = ({
   openToast,
-  setOpenToast,
+  handleOpenToast,
   title,
   description,
   action,
   close,
   closeStyle,
-  direction,
+  type,
+  page,
+  direction = 'up',
 }: ToastProps) => {
   return (
     <RadixToast.Provider duration={1500} swipeDirection={direction}>
@@ -32,7 +37,7 @@ const Toast = ({
           direction: direction || 'right',
         })}
         open={openToast}
-        onOpenChange={setOpenToast}
+        onOpenChange={handleOpenToast}
       >
         <RadixToast.Title className={styles.toastTitle}>
           {title}

@@ -1,8 +1,12 @@
-import { style } from '@vanilla-extract/css';
+import { createVar, style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
+
+import { vars } from '@/styles/vars.css';
 
 import { toastRoot } from './toastRoot.css';
 import { toastHeight, toastWidth, viewportPadding } from './vars.css';
+
+export const toastPosition = createVar();
 
 const toastViewport = recipe({
   base: {
@@ -17,6 +21,7 @@ const toastViewport = recipe({
     maxWidth: '100vw',
     margin: 0,
     listStyle: 'none',
+
     zIndex: 2147483647,
     outline: 'none',
     vars: {
@@ -29,13 +34,13 @@ const toastViewport = recipe({
     direction: {
       down: {
         bottom: 0,
-        right: '50%',
+        right: `calc(50% - ${toastPosition})`,
         top: 'unset',
         transform: 'translateX(50%)',
       },
       up: {
         top: 0,
-        right: '50%',
+        right: `calc(50% - ${toastPosition})`,
         bottom: 'unset',
         transform: 'translateX(50%)',
       },
@@ -53,6 +58,7 @@ const toastViewport = recipe({
 
 const toastTitle = style({
   gridArea: 'title',
+  fontSize: vars.fontSize.body2,
 });
 
 const toastDescription = style({
@@ -63,4 +69,4 @@ export const ToastAction = style({
   gridArea: 'action',
 });
 
-export { toastDescription, toastRoot,toastTitle, toastViewport };
+export { toastDescription, toastRoot, toastTitle, toastViewport };

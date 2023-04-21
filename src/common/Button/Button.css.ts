@@ -183,6 +183,7 @@ const variants = {
 export const button = recipe({
   base: {
     ...base,
+    width: 'fit-content',
     textAlign: 'center',
   },
   variants: variants,

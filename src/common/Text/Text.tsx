@@ -7,19 +7,21 @@ import { text, TextVariantProps } from './Text.css';
 interface TextProps extends HTMLAttributes<HTMLSpanElement> {
   children: ReactNode;
   className?: string;
+  type?: 'span' | 'h1' | 'h2' | 'h4';
 }
 
 const Text = ({
   children,
   className,
   size,
+  type,
   color,
   weight,
   ...rest
 }: TextProps & TextVariantProps) => {
   const baseClassName = cx(text({ size, color, weight }), className);
 
-  switch (size) {
+  switch (type) {
     case 'h1':
       return (
         <h1 className={baseClassName} {...rest}>
